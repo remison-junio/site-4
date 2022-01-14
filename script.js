@@ -67,21 +67,16 @@ function efeitoFechar(adicionando, removendo){
 
 secaoMenu.addEventListener('mouseenter', ()=> {
 	efeitoFechar('fechar-dentro', 'fechar-fora');
-	console.log('entrou');
 })
 
 secaoMenu.addEventListener('mouseleave', ()=> {
-	efeitoFechar('fechar-fora', 'fechar-dentro');
-	console.log('saiu');
-})
+	efeitoFechar('fechar-fora', 'fechar-dentro');})
 
 fecharMenu.addEventListener('mouseenter', () => {
 	efeitoFechar('fechar-fora', 'fechar-dentro');
-	console.log('entrou');
 })
 fecharMenu.addEventListener('mouseout', () => {
 	efeitoFechar('fechar-dentro', 'fechar-fora');
-	console.log('saiu');
 })
 
 me.addEventListener('mouseenter', ()=> {
@@ -229,7 +224,7 @@ btnXp3.addEventListener('click', () => {
 	}
 })
 
-//Artigos carousel
+//Carousel
 
 const artigoBtn1 = document.querySelector('#artigo-btn-1');
 const artigoBtn2 = document.querySelector('#artigo-btn-2');
@@ -240,32 +235,53 @@ const carrousselArtigoItem = document.querySelectorAll('.carroussel-artigo-item'
 
 let contadorCarousel = 0;
 
-artigoBtn2.addEventListener('click', carouselNext);
-artigoBtn1.addEventListener('click', carouselPrev);
-
-function carouselPrev() {
+function carouselPrev(containerPai, tamanhoMovimento, tamanhoInicial) {
 	contadorCarousel--
 	if (contadorCarousel < 0) {
-		containerArtigo.style.transform = 'translateX(-100%)'
+		containerPai.style.transform = tamanhoInicial
 		contadorCarousel = 5
 	}
-	containerArtigo.style.transform += 'translateX(16.6666666%)'
-	console.log(contadorCarousel)
+		containerPai.style.transform += tamanhoMovimento	
 }
 
-function carouselNext() {
-	contadorCarousel++
-	containerArtigo.style.transform += 'translateX(-16.6666666%)'
+function carouselNext(containerPai, containerFilho, tamanhoMovimento, tamanhoInicial) {
+	contadorCarousel++;
+	containerPai.style.transform += tamanhoMovimento;
 	
-	if(contadorCarousel > carrousselArtigoItem.length - 1) {
+	if(contadorCarousel > containerFilho.length - 1) {
 		
-		contadorCarousel = 0
-		containerArtigo.style.transform = 'translateX(0%)'
+		contadorCarousel = 0;
+		containerPai.style.transform = tamanhoInicial;
 	}
-	console.log(contadorCarousel);
+	
 }
 
-setInterval(carouselNext, 8000);
+//Carousel artigos
+
+function corouselArtigoNext () {
+	carouselNext(containerArtigo, carrousselArtigoItem, 'translateX(-16.6666666%)', 'translateX(0%)');
+} 
+
+function corouselArtigoPrev () {
+	carouselPrev(containerArtigo, 'translateX(16.6666666%)', 'translateX(-100%)');
+} 
+
+artigoBtn2.addEventListener('click', corouselArtigoNext);
+artigoBtn1.addEventListener('click', corouselArtigoPrev)
+
+setInterval(corouselArtigoNext, 8000);
+
+//Carousel portfolio
+
+
+
+
+
+var img = document.querySelector('.portfolio-cards-img'); 
+
+var tamanho = img.clientWidth;
+
+console.log(tamanho);
 
 //scroll suave 
 
@@ -285,7 +301,35 @@ const portfolioBtn2 = document.querySelector('#portfolio-btn-2');
 //portfolioBtn1.addEventListener('click', portfolioPrev);
 portfolioBtn2.addEventListener('click', portfolioNext);
 
+let contador = 0;
+
+const portfolioContainer = document.querySelector('.portfolio-card-container');
+const portfolioItem = document.querySelectorAll('.portfolio-cards-item')
+	
+	
+
+	var elementoOriginal = portfolioItem[0];
+	var elementoClone = elementoOriginal.cloneNode(true);
+
+console.log(portfolioContainer)
+
+
+	// inserindo o elemento na paǵina
+	document.body.appendChild(elementoClone);
+
 function portfolioNext() {
-	const portfolioSecaoCards = document.querySelector('.portfolio-secao-cards');
-	portfolioSecaoCards.style.transform += 'translateX(-370px)'
+	
+	portfolioContainer.style.transform += 'translateX(calc(-370px + -15px))'
+
+	
+
+	
+
+	
+	contador++;
+
+	if (contador == 4) {
+		contador == 0
+	}
+
 }

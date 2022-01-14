@@ -1149,9 +1149,14 @@ body {
 
 .portfolio-secao-cards {
 	border: 1px solid blue;
-	display: flex;
+	display: ;
 	overflow: hidden;
 	width: 116%;
+}
+
+.portfolio-card-container {
+	display: flex;
+	transition: transform .7s;
 }
 
 .portfolio-cards-item {
