@@ -241,10 +241,11 @@ function carouselPrev(containerPai, tamanhoMovimento, tamanhoInicial) {
 		containerPai.style.transform = tamanhoInicial
 		contadorCarousel = 5
 	}
-		containerPai.style.transform += tamanhoMovimento	
+	
+	containerPai.style.transform += tamanhoMovimento	
 }
 
-function carouselNext(containerPai, containerFilho, tamanhoMovimento, tamanhoInicial) {
+function carouselNext(containerPai, containerFilho, tamanhoMovimento, tamanhoInicial, contarAte) {
 	contadorCarousel++;
 	containerPai.style.transform += tamanhoMovimento;
 	
@@ -253,7 +254,6 @@ function carouselNext(containerPai, containerFilho, tamanhoMovimento, tamanhoIni
 		contadorCarousel = 0;
 		containerPai.style.transform = tamanhoInicial;
 	}
-	
 }
 
 //Carousel artigos
@@ -275,14 +275,6 @@ setInterval(corouselArtigoNext, 8000);
 
 
 
-
-
-var img = document.querySelector('.portfolio-cards-img'); 
-
-var tamanho = img.clientWidth;
-
-console.log(tamanho);
-
 //scroll suave 
 
 let linkMenu = document.querySelectorAll('.menu-link') 
@@ -298,38 +290,44 @@ linkMenu.forEach(function(item) {
 const portfolioBtn1 = document.querySelector('#portfolio-btn-1');
 const portfolioBtn2 = document.querySelector('#portfolio-btn-2');
 
-//portfolioBtn1.addEventListener('click', portfolioPrev);
+portfolioBtn1.addEventListener('click', portfolioPrev);
 portfolioBtn2.addEventListener('click', portfolioNext);
 
-let contador = 0;
-
 const portfolioContainer = document.querySelector('.portfolio-card-container');
-const portfolioItem = document.querySelectorAll('.portfolio-cards-item')
-	
-	
+const portfolioItem = document.querySelectorAll('.portfolio-cards-item');
+const img = document.querySelector('.portfolio-cards-img');
+var tamanho = img.clientWidth;
 
-	var elementoOriginal = portfolioItem[0];
-	var elementoClone = elementoOriginal.cloneNode(true);
-
-console.log(portfolioContainer)
-
-
-	// inserindo o elemento na paǵina
-	document.body.appendChild(elementoClone);
+var contadorPortfolio = 0;	
 
 function portfolioNext() {
-	
-	portfolioContainer.style.transform += 'translateX(calc(-370px + -15px))'
 
-	
-
-	
-
-	
-	contador++;
-
-	if (contador == 4) {
-		contador == 0
+	if(contadorPortfolio < portfolioItem.length - 3) {
+		portfolioContainer.style.transform += `translateX(calc(-${tamanho}px + -15px))`
+		contadorPortfolio++;
+	} else if(contadorPortfolio == portfolioItem.length - 3){
+		portfolioContainer.style.transform += `translateX(calc(-${tamanho / 2}px + -15px))`
+		contadorPortfolio++;
+	} else {
+		portfolioContainer.style.transform += `translateX(0px)`;
+		contadorPortfolio = portfolioItem.length - 2;
 	}
+}
 
+function portfolioPrev() {
+	
+console.log(contadorPortfolio)
+	if (contadorPortfolio == portfolioItem.length - 2) {
+		console.log('diminir' + contadorPortfolio)
+		contadorPortfolio--;
+		portfolioContainer.style.transform += `translateX(calc(${tamanho / 2}px + 15px))`;
+	} else if (contadorPortfolio < portfolioItem.length - 2 && contadorPortfolio > 0) {
+		portfolioContainer.style.transform += `translateX(calc(${tamanho}px + 15px))`;
+		contadorPortfolio--;
+		console.log('if 2 	' + contadorPortfolio)
+	} else {
+		console.log('zerou')
+		portfolioContainer.style.transform += `translateX(0px)`;
+		contadorPortfolio = 0
+	}
 }

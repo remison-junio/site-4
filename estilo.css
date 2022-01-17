@@ -1142,13 +1142,11 @@ body {
 }
 
 .portfolio-btns {
-	border: 1px solid red;
 	display: inline-block;
 	margin-top: 15px;
 }
 
 .portfolio-secao-cards {
-	border: 1px solid blue;
 	display: ;
 	overflow: hidden;
 	width: 116%;
@@ -1160,7 +1158,6 @@ body {
 }
 
 .portfolio-cards-item {
-	border: 1px solid red;
 	cursor: pointer;
 	margin-right: 15px;
 }
