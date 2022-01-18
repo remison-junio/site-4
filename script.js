@@ -93,6 +93,45 @@ me.addEventListener('mouseleave', ()=> {
 	meBorda2.style.transition = 'border-color .2s';
 })
 
+
+//descrição me
+
+const descricaoMe = document.querySelector('.me-titulo-2');
+
+const textosMe = ['Bruce Wilson', 'Web Developer', 'Freelancer', 'Photographer'];
+
+function efeitoMaquinaEscrever(elemento) {
+	const textoArray = elemento.split('');
+	textoArray.forEach((letra, i, a) => {
+		setTimeout(function(){
+	 		descricaoMe.innerHTML += letra
+	 	}, 150 * i)
+	})
+}
+
+function efeitoMaquinaApagar(elemento) {
+	const textoAtualArray = elemento.innerHTML.split('')
+	let contador = textoAtualArray.length
+
+	textoAtualArray.forEach((letra, i) => {
+		console.log(letra)
+	})
+}
+
+function teste() {
+	setTimeout(() => {
+	efeitoMaquinaEscrever(textosMe[0])
+	}, 1000)
+
+	setTimeout(() => {
+		efeitoMaquinaApagar(descricaoMe)
+	}, 5000)
+}
+
+teste()
+
+
+
 //topo
 
 document.addEventListener('scroll', () => {
@@ -331,3 +370,18 @@ console.log(contadorPortfolio)
 		contadorPortfolio = 0
 	}
 }
+
+
+//News e Tips 
+
+const newsBtn = document.querySelector('.news-btn')
+newsBtn.addEventListener('click', mostrarMais)
+
+function mostrarMais() {
+	var ultimo = document.querySelectorAll('.ultimo')
+
+	for(i=0;i<ultimo.length;i++) {
+		ultimo[i].classList.toggle('active')
+	}
+}
+

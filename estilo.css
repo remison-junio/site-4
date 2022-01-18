@@ -391,6 +391,34 @@ body {
 	margin-bottom: 11px;
 }
 
+.me-titulo-2:before {
+	content: '[';
+	left: 40px;
+}
+
+.me-titulo-2:after {
+	content: ']';
+	right: 40px;
+}
+
+.me-titulo-2:after, .me-titulo-2::before{
+	color: #44993b;
+	position: absolute;
+	animation-name: chavesAnimacao;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes chavesAnimacao{
+	0%, 100%{
+		opacity: 1;
+	}
+
+	50%{
+		opacity: 0;
+	}
+}
+
 .footer-me {
 	text-align: center;
 	margin-top: 20px;
@@ -723,7 +751,7 @@ body {
 	font-weight: 400;
 	position: absolute;
 	background-color: #1d1b19;
-	padding: 10px 20px;
+	padding: 0 20px;
 	top: 35px;
 	transform: translateY(-50%);
 	left: 20px;
@@ -1185,3 +1213,59 @@ body {
 	object-fit: cover;
 	margin-bottom: 16px;
 }
+
+/*news*/ 
+
+.news-posts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 50px;
+	grid-row-gap: 30px;
+}
+
+.news-posts-item {
+	cursor: pointer;
+}
+
+.news-posts-item.ultimo {
+	display: none;
+}
+
+.ultimo.active {
+	display: block;
+}
+
+.news-posts-img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+.news-posts-data {
+	color: #888888;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.news-posts-link {
+	color: white;
+	font-size: 18px;
+	transition: color .3s;
+}
+
+.news-posts-link:hover {
+	color: #987750;
+	transition: color .3s;
+}
+
+.news-btn {
+	width: 100%;
+	display: block;
+	margin-top: 50px;
+}
+
+
+
+
+
