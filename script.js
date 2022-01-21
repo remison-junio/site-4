@@ -101,6 +101,7 @@ const descricaoMe = document.querySelector('.me-titulo-2');
 const textosMe = ['Bruce Wilson', 'Web Developer', 'Freelancer', 'Photographer'];
 
 function efeitoMaquinaEscrever(elemento) {
+
 	const textoArray = elemento.split('');
 	textoArray.forEach((letra, i, a) => {
 		setTimeout(function(){
@@ -110,27 +111,27 @@ function efeitoMaquinaEscrever(elemento) {
 }
 
 function efeitoMaquinaApagar(elemento) {
-	const textoAtualArray = elemento.innerHTML.split('')
-	let contador = textoAtualArray.length
-
-	textoAtualArray.forEach((letra, i) => {
-		console.log(letra)
-	})
+	descricaoMe.innerHTML = ''
 }
-
+let contadorInicio = 0
 function teste() {
-	setTimeout(() => {
-	efeitoMaquinaEscrever(textosMe[0])
-	}, 1000)
+		setTimeout(() => {
+			efeitoMaquinaEscrever(textosMe[contadorInicio])
+			contadorInicio++;
+			if(contadorInicio == textosMe.length){
+				contadorInicio = 0;
+			}
+		}, 250)
 
-	setTimeout(() => {
-		efeitoMaquinaApagar(descricaoMe)
-	}, 5000)
+		setTimeout(() => {
+			efeitoMaquinaApagar(descricaoMe)
+		}, 6850)
 }
 
-teste()
-
-
+setInterval(function helo(){
+	teste();
+	return helo;
+}(), 7000);
 
 //topo
 
