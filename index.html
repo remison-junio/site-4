@@ -19,11 +19,11 @@
 		<div  class="site">
 			<!-- https://frenify.net/envato/frenify/html/resumo/1/index.html -->
 
-			<div id="topo" class="conteudo1">
+			<div id="#topo" class="conteudo1">
 
 				<div class="fundo-esquerdo"></div>
 
-				<section id="home" class="resumo">
+				<section id="home" class="home">
 					<h2 class="titulo-primario">INTRODUCTION</h2>
 					
 					<h1 class="titulo-secundario">UI/UX Designer</h1>
@@ -90,7 +90,7 @@
 					</section>			
 				</section>
 
-				<section id="xp" class="xp">
+				<section id="portfolio" class="xp">
 					<ul class="xp-botoes">
 						<li class= "xp-btn xp-btn-1">
 							<button id="xp-btn-1" class="active">Experience</button>
@@ -233,7 +233,7 @@
 
 				</section>
 
-				<section id="portfolio" class="resumo">
+				<section>
 					<h2 class="titulo-primario">PORTFOLIO</h2>
 
 					<div class="portfolio-titulo-e-btn">
@@ -288,7 +288,7 @@
 					
 				</section>	
 
-				<section class="services">
+				<section class="services" id="services">
 					<h2 class="titulo-primario">SERVICES</h2>
 					
 					<h1 class="titulo-secundario">What I Do</h1>
@@ -384,7 +384,7 @@
 					
 				</section>
 
-				<section class="artigo">
+				<section class="artigo" >
 					
 					<div class="artigo-botoes">
 						<button id="artigo-btn-1" class="artigo-btn">
@@ -446,7 +446,7 @@
 					
 				</section>
 
-				<section>
+				<section id="news">
 					<h2 class="titulo-primario">News & Tips</h2>
 					
 					<h1 class="titulo-secundario">Latest Articles</h1>
@@ -487,7 +487,7 @@
 					<button class="contact-form-enviar news-btn">Done</button>
 				</section>
 
-				<section class="contact">
+				<section class="contact" id="contact">
 
 					<h2 class="titulo-primario">Contact</h2>
 					
@@ -533,7 +533,7 @@
 				</section>
 			</div>
 			<div class="conteudo2">
-				<section class="">
+				<section>
 
 					<div class="me">
 						
@@ -544,15 +544,16 @@
 
 
 							
-								
-							<div class="me-borda1">
-								<div class=" me-borda2">
-									<div class="me-borda-2-info">
-										<img class="img-modelo" src="./img/modelo.jpg" alt="foto do modelo">
-										<h3 class="me-titulo-1">Hi there! I am</h3>
-										<h3 class="me-titulo-2"></h3>
+							<div>
+								<div class="me-borda1">
+									<div class=" me-borda2">
+										<div class="me-borda-2-info">
+											<img class="img-modelo" src="./img/modelo.jpg" alt="foto do modelo">
+											<h3 class="me-titulo-1">Hi there! I am</h3>
+											<h3 class="me-titulo-2"></h3>
+										</div>
+										
 									</div>
-									
 								</div>
 							</div>
 							
@@ -569,13 +570,13 @@
 						<nav class="menu">
 							<button id="fechar-menu" class="fechar"></button>
 							<h3 class="menu-titulo">Menu </h3>
-							<ul id="menu-nav">
+							<ul id="menu-nav" class="menu-nav">
 								<li class="menu-itens"><a class="menu-link" href="#home">Home</a></li>
 								<li class="menu-itens"><a class="menu-link" href="#about">About</a></li>
 								<li class="menu-itens"><a class="menu-link" href="#portfolio">Portfolio</a> </li>
 								<li class="menu-itens"><a class="menu-link" href="#services">Services</a></li>
 								<li class="menu-itens"><a class="menu-link" href="#customers">Custumers</a></li>
-								<li class="menu-itens"><a class="menu-link" href="#newTips">News & Tips</a></li>
+								<li class="menu-itens"><a class="menu-link" href="#news">News & Tips</a></li>
 								<li class="menu-itens"><a class="menu-link" href="#contact">Contact</a></li>
 							</ul>
 
@@ -624,10 +625,12 @@
 				<p>Designed & Developed by <a class="footer-link" href="">Frenify</a></p>
 
 				<div class="footer-box-btn">
-					<a href="#topo" class="btn-seta-footer">
+					<a href="#home" class="btn-seta-footer">
 						<svg class="seta-footer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
-					</a>		
+					</a>
+							
 				</div>
+
 				
 			</footer>
 
@@ -635,6 +638,13 @@
 
 
 		<script src="script.js"></script>
+		<script
+		  src="https://code.jquery.com/jquery-3.6.0.min.js"
+		  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		  crossorigin="anonymous">
+		</script>
+
+		<script src="scrollSuave.js"></script>
 		
 	</body>
 </html>

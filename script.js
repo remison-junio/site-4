@@ -121,7 +121,7 @@ function efeitoMaquinaApagar(elemento) {
 	descricaoMe.innerHTML = ''
 }
 let contadorInicio = 0
-function teste() {
+function ativandoMaquinaEscrever() {
 		setTimeout(() => {
 			efeitoMaquinaEscrever(textosMe[contadorInicio])
 			contadorInicio++;
@@ -135,9 +135,9 @@ function teste() {
 		}, 7000)
 }
 
-setInterval(function helo(){
-	teste();
-	return helo;
+setInterval(function i(){
+	ativandoMaquinaEscrever();
+	return i;
 }(), 8000);
 
 //topo
@@ -148,17 +148,11 @@ document.addEventListener('scroll', () => {
 		secaoMenu.classList.add('scrolando');
 		fundoEsquerdo.classList.add('scrolando');
 		me.classList.add('scrolando');
-		meBorda1.classList.add('scrolando');
-		meBorda2.classList.add('scrolando');
-		imgModelo.classList.add('scrolando');
 	} else {
 		site.classList.remove('scrolando');
 		secaoMenu.classList.remove('scrolando');
 		fundoEsquerdo.classList.remove('scrolando');
 		me.classList.remove('scrolando');
-		meBorda1.classList.remove('scrolando');
-		meBorda2.classList.remove('scrolando');
-		imgModelo.classList.remove('scrolando');
 	}
 })
 
@@ -324,7 +318,7 @@ setInterval(corouselArtigoNext, 8000);
 
 
 
-//scroll suave 
+//Fechando Menu ao clicar no item 
 
 let linkMenu = document.querySelectorAll('.menu-link') 
 

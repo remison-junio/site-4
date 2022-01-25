@@ -62,7 +62,7 @@ body {
 }
 
 .titulo-primario {
-	margin-top: 140px;
+	padding-top: 140px;
 	font-size: 18px;
 	letter-spacing: 1px;
 	font-weight: 500;
@@ -150,8 +150,6 @@ body {
 	cursor: pointer;
 	z-index: 1;
 	border-radius: 2px;
-
-	
 }
 
 .menu-hamburger > .texto {
@@ -316,9 +314,7 @@ body {
 	transition: .2s;
 }
 
-/*ME    
-	o que diminue ao scrolar é o img-modelo
-*/
+/*ME*/
 
 .me {
 	text-align: center;
@@ -331,26 +327,18 @@ body {
 
 .me.scrolando {
 	width: 30%;
-
 }
 
 .me::-webkit-scrollbar{ 
     display: none;
 }
 
-.me-borda1 {
-	
-	margin-top: 120px;
-	
+.me-borda1 {	
+	margin-top: 120px;	
 	padding: 20px;
-
-	
 	margin-right: auto;
 	margin-left: auto;
-
-
 	border: 1px solid rgba(255, 255, 255, .2);
-	
 	width: 80%;
 	border-radius: 2px;
 }
@@ -362,10 +350,6 @@ body {
 	border-radius: 2px;
 }
 
-.me-borda2.scrolando {
-
-}
-
 .me-borda-2-info {
 	position: relative;
 }
@@ -375,29 +359,19 @@ body {
 	margin: auto;
 }
 
-.img-modelo.scrolando {
-	width: ;
-}
-
 .me-titulo-1 {
 	font-size: 18px;
 	color: #999;
 	font-weight: 500;
 	text-transform: uppercase;
-	margin-bottom: 8px;
-	margin-top: 15px;
+	margin-bottom: 5px;	
 }
 
 .me-titulo-2 {
 	font-size: 30px;
 	font-weight: 400;
 	color: white;
-	
 	min-height: 50px;
-	border: 1px solid blue;
-	
-	
-
 }
 
 .me-titulo-2:before {
@@ -467,12 +441,7 @@ body {
 	color: red;
 }
 
-
-/*RESUMO*/ 
-
-.resumo {
-	
-}
+/*Home*/ 
 
 .img-assinatura {
 	margin-bottom: 20px;
@@ -481,26 +450,19 @@ body {
 /*About*/ 
 
 .about-dados {
-	
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
 }
 
 .about-dados table {
-	
-	font-size: 18px;
-	
+	font-size: 18px;	
 }
 
-.about-dados p {
-	border: 1px solid blue;
-
-}
 .about-dados th {
 	text-align: left;
 	width: 50%;
-
 }
+
 .about-dados th:nth-child(1) { 
 	padding: 9px 10px 9px 0;
 	color: #888888;
@@ -561,7 +523,6 @@ body {
 	display: block;
 	margin: 0 auto;
 	position: relative;
-	
 	top: 45px;
 }
 
@@ -657,7 +618,6 @@ body {
 	position: relative;
 	top: -9px;
 	margin: 0 20px;
-
 }
 
 .xp-3 p {
@@ -704,12 +664,15 @@ body {
 .xp-92 {
 	width: 92%;
 }
+
 .xp-95 {
 	width: 95%;
 }
+
 .xp-80 {
 	width: 80%;
 }
+
 .xp-85 {
 	width: 85%;
 }
@@ -736,9 +699,8 @@ body {
 	bottom: -8px;
 	margin-left: -4px;
 	display: block;
- }
+}
 
- 
 /*Portfolio*/
 
 .portfolio-titulo-e-btn {
@@ -793,9 +755,6 @@ body {
 
 /*SERVICES e Cards*/
 
-.services {
-}
-
 .cards {
 	border: 1px solid #151412;
 	background-color: #181715;
@@ -824,7 +783,6 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	margin-right: 20px;
-
 }
 
 .cards-xp-data {
@@ -863,7 +821,6 @@ body {
 	letter-spacing: 0;
 }
 
-
 .services-cards-right {
 	border-left: 1px solid rgba(255, 255, 255, .2);
 	min-width: 30%;
@@ -871,11 +828,6 @@ body {
     align-items: center;
     justify-content: center
 }
-
-.services-cards-right-conteudo {
-	
-}
-
 
 .services-cards-right-titulo {
 	font-size: 16px;
@@ -924,17 +876,16 @@ body {
 }
 
 /*artigos*/
+
 .artigo {
 	margin-top: 50px;
 }
 
 .artigo-botoes {
-	margin-bottom: 20px;
-	
+	margin-bottom: 20px;	
 }
 
  .artigo-btn {
- 	
  	background-color: transparent;
  	border: 2px solid transparent;
  	transition: border-color .3s;
@@ -943,7 +894,7 @@ body {
  	position: ;
  }
 
- /*setas*/
+ /*Setas*/
 
  .seta {
  	width: 45px;
@@ -963,8 +914,6 @@ body {
  	transition: border-color .3s;
  }
 
- 
-
 .artigo-nome {
  	font-size: 30px;
  	color: #ddd;
@@ -979,7 +928,6 @@ body {
  	text-transform: uppercase;
  }
 
-
  .carroussel-artigo {
  	width: 100%;
  	overflow-x: hidden;
@@ -990,15 +938,6 @@ body {
  	width: 600%;
  	transition: transform .7s;
  }
-
- .grabbable {
-    cursor: grab;
-}
-
-.grabbable.active {
-    cursor: grabbing;
-    
-}
 
  .artigos {
  	width: 100%;
@@ -1072,14 +1011,12 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 25px;
-
 	margin-bottom: 100px;
 }
 
 .contact-form-nome {
 	grid-column: 1 / 2;
 	position: relative;
-
 }
 
 .contact-form-email {
@@ -1148,7 +1085,6 @@ body {
 	letter-spacing: 0.5px;
 	cursor: pointer;
 	transition: color .3s, border-color .3s;
-
 	grid-column: 1 / -1;
 }
 
@@ -1204,37 +1140,36 @@ body {
 
  /*footer*/
 
- .footer {
+.footer {
  	padding: 60px 6%;
  	border-right: 1px solid rgba(255, 255, 255, .2);
  	border-top: 1px solid rgba(255, 255, 255, .2);
  	width: 100%;
  	position: relative;
- }
-
- .footer p {
- 	color: #888888;
- 	font-size: 18px;
- }
- .footer .footer-link {
- 	color: white;
- 	border-bottom: 1px solid rgba(255, 255, 255, .2);
- }
-
- .footer-box-btn {
- 	position: absolute;
- 	top: 0;
- 	right: 12%;
- 	transform: translateY(-50%);
- 	
- 	width: 80px;
- 	background-color: #1d1b19;
  	text-align: center;
  }
 
- 
+.footer p {
+ 	color: #888888;
+ 	font-size: 18px;
+}
 
- .btn-seta-footer {
+.footer .footer-link {
+ 	color: white;
+ 	border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.footer-box-btn {
+ 	position: absolute;
+ 	top: 0;
+ 	right: 12%;
+ 	transform: translateY(-50%);	
+ 	width: 80px;
+ 	background-color: #1d1b19;
+ 	text-align: center;
+}
+
+.btn-seta-footer {
  	border: 2px solid transparent;
  	transition: border-color .3s;
  	background-color: transparent;
@@ -1242,31 +1177,19 @@ body {
  	padding: 5px;
  	position: ;
  	display: inline-block;
-
- 	
- 
-
 }
 
- .seta-footer {
+.seta-footer {
  	width: 45px;
  	height: 40px;
  	color: rgba(255 , 255,255, .2);
  	transform: rotate(-90deg);
- 	
-
 }
 
- .btn-seta-footer:hover {
+.btn-seta-footer:hover {
  	border: 2px solid #987750; 
  	transition: border-color .3s;
-
- 
- }
-
-
-
-
+}
 
 @media (max-width: 1400px) {
 	.about-dados {
@@ -1278,7 +1201,6 @@ body {
 		grid-template-columns: 1fr 1fr;
 	}
 }
-
 
 @media (max-width: 1040px) {
 	.site {
@@ -1292,14 +1214,11 @@ body {
 	}
 
 	.fundo-esquerdo {
-		width: 100%;
-		
+		width: 100%;	
 	}
 
 	.fundo-esquerdo.scrolando {
 		width: 100%;
-
-
 	}
 
 	.conteudo1 {
@@ -1317,7 +1236,6 @@ body {
 		width: 100%;
 		height: auto;
 	}
-
 
 	.me.scrolando {
 		width: 100%;
@@ -1337,7 +1255,6 @@ body {
 	}
 
 	.portfolio-secao-cards {
-		
 		width: 105%;
 	}
 
@@ -1345,8 +1262,6 @@ body {
 		background-color: #181715;
 		border: 1px solid #151412;
 	}
-
-	
 }
 
 @media (max-width: 750px) {
@@ -1363,12 +1278,10 @@ body {
 	.texto-primario {
 		font-size: 20px; 
 		line-height: 1.5; 
-		
 	}
 
 	.news-posts {
 		grid-template-columns: auto;
-		
 	}
 
 	.news-posts-img {
@@ -1382,11 +1295,6 @@ body {
 	.contact-form-email, .contact-form-nome, .contact-form-phone, .contact-form-message {
 		grid-column: 1 / -1;	
 	}
-
-
-
-
-
 }
 
 @media (max-width: 540px) {
@@ -1394,7 +1302,6 @@ body {
     	font-size: 36px;
     	margin-bottom: 34px;
 	}
-
 
 	.services-cards {
 		display: block;
@@ -1409,8 +1316,6 @@ body {
 
 	.services .services-cards-left::before {
 		height: 50px;
-		
-		
 		top: 50%;
 		transform: translateY(calc(-50% - 40px));
 	}
@@ -1437,7 +1342,6 @@ body {
 	.contact-address-texto, .contact-address-numero {
 		font-size: 24px;
 		max-width: 100%;
-
 	}
 
 	.seta {
@@ -1457,21 +1361,17 @@ body {
 	}
 
 	.portfolio-cards-item a {
-		font-size: 20px;
-		
+		font-size: 20px;	
 	}
 
 	.portfolio-cards-img {
 		width: 250px;
 	}
 
-	.about-dados table {
-		
-		font-size: 14px;
-		
+	.about-dados table {	
+		font-size: 14px;	
 	}
-} 
-
+}
 
 @media (max-width:300px) {
 	.portfolio-titulo-e-btn {
@@ -1485,6 +1385,4 @@ body {
 	.menu-footer-itens {
 		margin-bottom: 10px;
 	}
-} 
-
-
+}
