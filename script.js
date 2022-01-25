@@ -17,6 +17,10 @@ btnMenu.addEventListener('click', () => {
 	 fundoEsquerdo.classList.add('menu-aberto');
 	 fecharMenu.classList.add('fechar-dentro');
 
+	
+	 document.querySelector('body').style.overflowY = 'hidden'
+
+
 	let contador = 100;
 	let inicio = 700;
  	menuNav.forEach((v,i,a)=> {
@@ -53,6 +57,9 @@ function fechandoMenu() {
 
 	secaoMenu.classList.add('menu-fechado');
 	fundoEsquerdo.classList.add('menu-fechado');
+
+	document.querySelector('body').style.overflowY = 'scroll'
+
 
 	menuNav.forEach((v,i,a)=> {
 	 	v.style.opacity = '0';
@@ -125,13 +132,13 @@ function teste() {
 
 		setTimeout(() => {
 			efeitoMaquinaApagar(descricaoMe)
-		}, 6850)
+		}, 7000)
 }
 
 setInterval(function helo(){
 	teste();
 	return helo;
-}(), 7000);
+}(), 8000);
 
 //topo
 
@@ -142,6 +149,7 @@ document.addEventListener('scroll', () => {
 		fundoEsquerdo.classList.add('scrolando');
 		me.classList.add('scrolando');
 		meBorda1.classList.add('scrolando');
+		meBorda2.classList.add('scrolando');
 		imgModelo.classList.add('scrolando');
 	} else {
 		site.classList.remove('scrolando');
@@ -149,6 +157,7 @@ document.addEventListener('scroll', () => {
 		fundoEsquerdo.classList.remove('scrolando');
 		me.classList.remove('scrolando');
 		meBorda1.classList.remove('scrolando');
+		meBorda2.classList.remove('scrolando');
 		imgModelo.classList.remove('scrolando');
 	}
 })
@@ -336,33 +345,46 @@ portfolioBtn2.addEventListener('click', portfolioNext);
 const portfolioContainer = document.querySelector('.portfolio-card-container');
 const portfolioItem = document.querySelectorAll('.portfolio-cards-item');
 const img = document.querySelector('.portfolio-cards-img');
-var tamanho = img.clientWidth;
+var tamanhoImg = img.clientWidth;
 
 var contadorPortfolio = 0;	
 
 function portfolioNext() {
+	var bodyTamanho = document.querySelector('body'); 
+	var bodyTamanho = bodyTamanho.clientWidth;
+	let reajustando = 3;
+	
 
-	if(contadorPortfolio < portfolioItem.length - 3) {
-		portfolioContainer.style.transform += `translateX(calc(-${tamanho}px + -15px))`
-		contadorPortfolio++;
-	} else if(contadorPortfolio == portfolioItem.length - 3){
-		portfolioContainer.style.transform += `translateX(calc(-${tamanho / 2}px + -15px))`
+	if (bodyTamanho < 1283 && bodyTamanho > 1040) {
+		reajustando = 4
+		
+	} else if(bodyTamanho < 840) {
+		reajustando = 4
+	} else {
+		reajustando = 3
+		
+	}
+
+	if(contadorPortfolio < reajustando) {
+		portfolioContainer.style.transform += `translateX(calc(-${tamanhoImg}px + -15px))`
 		contadorPortfolio++;
 	} else {
 		portfolioContainer.style.transform += `translateX(0px)`;
-		contadorPortfolio = portfolioItem.length - 2;
+		contadorPortfolio = reajustando;
+		
 	}
+
 }
 
 function portfolioPrev() {
 	
 console.log(contadorPortfolio)
-	if (contadorPortfolio == portfolioItem.length - 2) {
+	if (contadorPortfolio) {
 		console.log('diminir' + contadorPortfolio)
 		contadorPortfolio--;
-		portfolioContainer.style.transform += `translateX(calc(${tamanho / 2}px + 15px))`;
-	} else if (contadorPortfolio < portfolioItem.length - 2 && contadorPortfolio > 0) {
-		portfolioContainer.style.transform += `translateX(calc(${tamanho}px + 15px))`;
+		portfolioContainer.style.transform += `translateX(calc(${tamanhoImg}px + 15px))`;
+	} else if (contadorPortfolio < 3 && contadorPortfolio > 0) {
+		portfolioContainer.style.transform += `translateX(calc(${tamanhoImg}px + 15px))`;
 		contadorPortfolio--;
 		console.log('if 2 	' + contadorPortfolio)
 	} else {
@@ -371,8 +393,6 @@ console.log(contadorPortfolio)
 		contadorPortfolio = 0
 	}
 }
-
-
 //News e Tips 
 
 const newsBtn = document.querySelector('.news-btn')
@@ -385,4 +405,3 @@ function mostrarMais() {
 		ultimo[i].classList.toggle('active')
 	}
 }
-
