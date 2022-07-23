@@ -47,9 +47,8 @@ btnMenu.addEventListener('click', () => {
  	})
 })
 
-fecharMenu.addEventListener('click', ()=> {
-	fechandoMenu();
-})
+fecharMenu.addEventListener('click', fechandoMenu)
+fundoEsquerdo.addEventListener('click', fechandoMenu)
 
 function fechandoMenu() {
 	secaoMenu.classList.remove('menu-aberto');
@@ -77,13 +76,19 @@ secaoMenu.addEventListener('mouseenter', ()=> {
 })
 
 secaoMenu.addEventListener('mouseleave', ()=> {
-	efeitoFechar('fechar-fora', 'fechar-dentro');})
+	efeitoFechar('fechar-fora', 'fechar-dentro');
+})
 
 fecharMenu.addEventListener('mouseenter', () => {
 	efeitoFechar('fechar-fora', 'fechar-dentro');
 })
+
 fecharMenu.addEventListener('mouseout', () => {
 	efeitoFechar('fechar-dentro', 'fechar-fora');
+})
+
+fundoEsquerdo.addEventListener('mouseenter', ()=> {
+	efeitoFechar('fechar-fora', 'fechar-dentro');
 })
 
 me.addEventListener('mouseenter', ()=> {
@@ -215,7 +220,7 @@ function ativandoSpanForm(form) {
 	form.style.color = '#987750';
 	form.style.fontSize = '16px';
 	form.style.transition = 'top .2s';
-	form.style.zIndex = '12'	
+	form.style.zIndex = '7';
 }
 
 function desativandoSpanForm(form) {
@@ -223,7 +228,7 @@ function desativandoSpanForm(form) {
 	form.style.color = '#888888';
 	form.style.fontSize = '16px';
 	form.style.transition = 'top .2s';
-	form.style.zIndex = '10';	
+	form.style.zIndex = '5';
 }
 
 //Experiências
@@ -355,8 +360,7 @@ function portfolioNext() {
 	} else if(bodyTamanho < 840) {
 		reajustando = 4
 	} else {
-		reajustando = 3
-		
+		reajustando = 3	
 	}
 
 	if(contadorPortfolio < reajustando) {
@@ -365,7 +369,6 @@ function portfolioNext() {
 	} else {
 		portfolioContainer.style.transform += `translateX(0px)`;
 		contadorPortfolio = reajustando;
-		
 	}
 
 }
